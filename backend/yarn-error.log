@@ -1,0 +1,32 @@
+Arguments: 
+  /usr/bin/node /usr/bin/yarn add typescript nodemon ts-node
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  12.11.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND nexus.seduc.ce.gov.br
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
