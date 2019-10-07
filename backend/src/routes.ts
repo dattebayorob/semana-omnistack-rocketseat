@@ -1,9 +1,17 @@
-import express from 'express'
-import { sessionStore } from './controller/SessionController'
+import { Router } from 'express'
+import multer from 'multer'
+import { uploadConfig } from './config/upload'
+import { saveBookingToSpot } from './controller/BookingController'
+import { saveUser } from './controller/SessionController'
+import { findByTech, findByUser, saveSpot } from './controller/SpotController'
 
-const routes = express.Router()
+const routes = Router()
+const upload = multer(uploadConfig)
 
-routes.get('/', (_req, response) => response.json({ message: "Hello World" }))
-routes.post('/users', sessionStore)
+routes.post('/users', saveUser)
+routes.get('/spots', findByTech)
+routes.post('/spots', upload.single('thumbnail') ,saveSpot)
+routes.post('/spots/:spotId/booking', saveBookingToSpot)
+routes.get('/spots/me', findByUser)
 
 export default routes

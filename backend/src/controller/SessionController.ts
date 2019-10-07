@@ -1,10 +1,8 @@
-import * as express from 'express'
+import { Request, Response } from 'express'
 import User from '../model/User'
 
-const sessionStore = async ({ body:{ email } }: express.Request , res: express.Response) => {
+export const saveUser = async ({ body:{ email } }: Request , res: Response) => {
     let user = await User.findOne({ email })
-    if(!user) await User.create({ email })
+    if(!user) user = await User.create({ email })
     return res.json(user)
 }
-
-export { sessionStore }
